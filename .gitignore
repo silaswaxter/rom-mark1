@@ -1,1 +1,5 @@
 build/
+modules/
+tools/
+zephyr/
+bootloader/mcuboot
