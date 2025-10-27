@@ -12,6 +12,7 @@ const uint8_t kUSFSMAXMMCFirmwareID = 0x7F;
 
 int main(void)
 {
+	printk("Initializing Application...\n");
 	static const struct i2c_dt_spec dev_i2c = I2C_DT_SPEC_GET(USFSMAX_MMC_I2C_NODE);
 
 	if(!device_is_ready(dev_i2c.bus)) {
@@ -21,7 +22,9 @@ int main(void)
 
 	uint8_t fw_id = 0;
 
+	printk("Entering Application Main Loop...\n");
 	while (1) {
+		printk("Application Main Loop Heartbeat...\n");
 		int ret = i2c_write_read_dt(&dev_i2c, &kUSFSMAXMMCFirmwareID, 1, &fw_id, 1); if (ret != 0) {
 			printk("Failed to read register %#x\n", kUSFSMAXMMCFirmwareID);
 			return -1;
