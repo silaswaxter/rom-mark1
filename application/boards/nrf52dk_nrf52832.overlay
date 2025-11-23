@@ -3,12 +3,15 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    usfsmax_mmc:usfsmax_mmc@57{
-        compatible = "i2c-device";
+
+    usfsmax_mmc5983: usfsmax_mmc5983@57 {
+        compatible = "tleracorp,usfsmax_mmc5983";
         status = "okay";
-        reg = < 0x57 >;
+        reg = <0x57>;
+        reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
     };
 };
+
 
 &pinctrl {
     /omit-if-no-ref/ i2c0_default: i2c0_default {

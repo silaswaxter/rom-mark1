@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+compatible: "tleracorp,usfsmax_mmc5983"
+
+description: >
+  9 Dof IMU sensor, turn-key solution via coprocessor
+
+include: [base.yaml, i2c-device.yaml]
+
+properties:
+  reset-gpios:
+    type: phandle-array
+    required: true
+    description: Reset line for the sensor. Active-low.
