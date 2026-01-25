@@ -1,5 +1,6 @@
 {
     "nrf-connect.applications": [
         "${workspaceFolder}/application"
-    ]
+    ],
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/application/build/compile_commands.json"
 }

@@ -8,4 +8,8 @@ cmake_minimum_required(VERSION 3.20.0)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(nrf_connect_sdk_fundamentals)
 
+
+add_subdirectory(src)
+
+# The app source must be in this cmake file even though it breaks our general cmake usage pattern since zephyr stuff behind the scenes requires it.
 target_sources(app PRIVATE src/main.c)
